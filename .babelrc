@@ -1,0 +1,20 @@
+{
+  "plugins": [
+    "add-module-exports",
+    "transform-class-properties",
+  ],
+  "presets": [
+    ["@babel/preset-env", {
+      "targets": {
+        "node": "current",
+        "browsers": ""
+      },
+      "useBuiltIns": "entry",
+      "shippedProposals": true,
+      "modules": "commonjs",
+      "corejs": "2"
+    }],
+    "@babel/flow",
+    "@babel/react"
+  ]
+}
