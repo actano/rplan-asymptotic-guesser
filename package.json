@@ -63,7 +63,7 @@
     "eslint-plugin-flowtype": "^3.8.1",
     "flow-bin": "^0.98.1",
     "flow-typed": "^2.5.1",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.21",
     "mathjs": "^5.9.0"
   }
 }
