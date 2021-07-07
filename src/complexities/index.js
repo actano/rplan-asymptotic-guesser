@@ -12,7 +12,7 @@ const ComplexityApis: { [string]: ComplexityApi<any> } = {
 type ComplexityId = $Keys<typeof ComplexityApis>
 
 // map of all complexity ids for non-flow javascript
-const COMPLEXITY_IDS : { [string]: ComplexityId } = {
+const COMPLEXITY_IDS: { [string]: ComplexityId } = {
   EXPONENTIAL: 'exponential',
   POLYNOMIAL: 'polynomial',
 }

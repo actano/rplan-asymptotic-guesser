@@ -18,11 +18,13 @@ type ExponentialParameters = {
   base: number,
 }
 
-const parameterizedModelFunction :
-  ParameterizedModelFunction<ExponentialParameters> = ({ factor, base }) => {
-    const modelFunction: ModelFunction = x => factor * exp(log(base) * x)
-    return modelFunction
-  }
+const parameterizedModelFunction: ParameterizedModelFunction<ExponentialParameters> = ({
+  factor,
+  base,
+}) => {
+  const modelFunction: ModelFunction = x => factor * exp(log(base) * x)
+  return modelFunction
+}
 
 const calcA: Samples => number = (samples) => {
   const t1 = sumAll(samples, ({ time }) => log(time))
@@ -45,18 +47,17 @@ const calcB: Samples => number = (samples) => {
 }
 
 // source: http://mathworld.wolfram.com/LeastSquaresFittingExponential.html
-const guessParametersFromSamples
-  : GuessParametersFromSamples<ExponentialParameters> = (samples) => {
-    const A = calcA(samples)
-    const B = calcB(samples)
+const guessParametersFromSamples: GuessParametersFromSamples<ExponentialParameters> = (samples) => {
+  const A = calcA(samples)
+  const B = calcB(samples)
 
-    const parameters: ExponentialParameters = {
-      factor: exp(A),
-      base: exp(B),
-    }
-
-    return parameters
+  const parameters: ExponentialParameters = {
+    factor: exp(A),
+    base: exp(B),
   }
+
+  return parameters
+}
 
 const areParametersValid = (parameters) => {
   const isAlmostConstantFunction = closeTo(parameters.base, 1.0, 0.1)

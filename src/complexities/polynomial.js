@@ -27,13 +27,13 @@ type PolynomialParameters = {
   coefficients: number[],
 }
 
-const parameterizedModelFunction :
-  ParameterizedModelFunction<PolynomialParameters> = ({ coefficients }) => {
-    const modelFunction: ModelFunction = size => sumAll(coefficients,
-      (coefficient, i) => coefficient * pow(size, i),
-    )
-    return modelFunction
-  }
+const parameterizedModelFunction: ParameterizedModelFunction<PolynomialParameters> = ({
+  coefficients,
+}) => {
+  const modelFunction: ModelFunction = size => sumAll(coefficients,
+    (coefficient, i) => coefficient * pow(size, i))
+  return modelFunction
+}
 
 const createPolynomialMatrixRow = (x, maxPower) =>
   range(0, maxPower, true)
@@ -63,7 +63,7 @@ const guessParameterForPower = (maximumPower: number, samples: Samples) => {
 }
 
 // source: http://mathworld.wolfram.com/LeastSquaresFittingPolynomial.html
-const guessParametersFromSamples : GuessParametersFromSamples<PolynomialParameters> = (samples) => {
+const guessParametersFromSamples: GuessParametersFromSamples<PolynomialParameters> = (samples) => {
   const powerLawParams = powerLawApi.guessParametersFromSamples(samples)
   // Include smaller exponents to ensure that the guessed power is not too big
   const guessedMaximumPower = Math.trunc(powerLawParams.power)

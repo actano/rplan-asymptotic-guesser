@@ -1,14 +1,10 @@
 // @flow
 
 import type { ComplexityId } from '../complexities'
+import type { ComplexityVisualizationApi } from './type'
 
 import { api as exponentialApi } from './exponential'
 import { api as polynomialApi } from './polynomial'
-
-interface ComplexityVisualizationApi<ModelFunctionParameters> {
-  getPlotFunctionDefinition: ModelFunctionParameters => string,
-  getPlotFunctionName: () => string,
-}
 
 const ComplexityVisualizationApis: { [ComplexityId]: ComplexityVisualizationApi<any> } = {
   exponential: exponentialApi,

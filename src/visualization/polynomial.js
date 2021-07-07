@@ -1,7 +1,7 @@
 // @flow
 
 import type { PolynomialParameters } from '../complexities'
-import type { ComplexityVisualizationApi } from './visualization-api'
+import type { ComplexityVisualizationApi } from './type'
 
 const api: ComplexityVisualizationApi<PolynomialParameters> = {
   getPlotFunctionDefinition: ({ coefficients }) => {
