@@ -46,5 +46,4 @@ end
   console.log(stdout.toString('utf8'), stderr.toString('utf8')) // eslint-disable-line no-console
 }
 
-
 export { guessResultToGnuplot }

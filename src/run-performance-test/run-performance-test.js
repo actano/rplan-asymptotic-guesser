@@ -1,9 +1,9 @@
-// @flow
-
+// eslint-disable-next-line flowtype/no-types-missing-file-annotation
 import type { RuntimeInSeconds } from './performance-samples'
 
 import { BenchWithoutBrowserSupport, createPromisifiedSuite } from './benchmark'
 
+// eslint-disable-next-line flowtype/no-types-missing-file-annotation
 function runPerformanceTest(functionUnderTest: () => mixed): RuntimeInSeconds {
   const benchmark = new BenchWithoutBrowserSupport({ fn: functionUnderTest })
 
@@ -14,7 +14,9 @@ function runPerformanceTest(functionUnderTest: () => mixed): RuntimeInSeconds {
 }
 
 async function runPerformanceTestAsync(
+  // eslint-disable-next-line flowtype/no-types-missing-file-annotation
   functionUnderTest: () => Promise<mixed>,
+  // eslint-disable-next-line flowtype/no-types-missing-file-annotation
 ): Promise<RuntimeInSeconds> {
   const { addAsyncFn, runAsync } = createPromisifiedSuite()
 

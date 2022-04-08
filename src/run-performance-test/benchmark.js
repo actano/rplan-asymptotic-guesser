@@ -49,7 +49,6 @@ function createPromisifiedSuite(): PromisifiedSuite {
   }
 }
 
-
 export type { PromisifiedSuite }
 export {
   BenchWithoutBrowserSupport,

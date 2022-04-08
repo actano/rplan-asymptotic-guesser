@@ -30,8 +30,10 @@ type PolynomialParameters = {
 const parameterizedModelFunction: ParameterizedModelFunction<PolynomialParameters> = ({
   coefficients,
 }) => {
-  const modelFunction: ModelFunction = size => sumAll(coefficients,
-    (coefficient, i) => coefficient * pow(size, i))
+  const modelFunction: ModelFunction = size => sumAll(
+    coefficients,
+    (coefficient, i) => coefficient * pow(size, i),
+  )
   return modelFunction
 }
 

@@ -29,6 +29,7 @@ function runPerformanceTestSequence<TestData>(
 ): Samples {
   const suite = new BenchWithoutBrowserSupport.Suite()
 
+  // eslint-disable-next-line no-unused-vars
   for (const size of testDataSizes) {
     const { testData, actualSize } = generateTestData(size)
     suite.add(actualSize, functionUnderTest.bind(null, testData))
@@ -47,6 +48,7 @@ async function runPerformanceTestSequenceAsync<TestData>(
 ): Promise<Samples> {
   const { runAsync, addAsyncFn } = createPromisifiedSuite()
 
+  // eslint-disable-next-line no-unused-vars
   for (const size of testDataSizes) {
     // Run this intentionally in sequence instead of parallel.
     // eslint-disable-next-line no-await-in-loop
