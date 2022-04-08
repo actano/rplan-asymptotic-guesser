@@ -4,4 +4,4 @@ lib/
 .nyc_output/
 *.lcov
 coverage/
-yarn-error.log
+yarn.lock

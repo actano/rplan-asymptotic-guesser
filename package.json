@@ -6,7 +6,8 @@
   "main": "lib/index.js",
   "module": "src/index.js",
   "engines": {
-    "node": ">=8"
+    "node": ">=16",
+    "npm": ">=8.3"
   },
   "repository": {
     "type": "git",
@@ -14,11 +15,11 @@
   },
   "scripts": {
     "build": "babel --out-dir lib src",
-    "ci": "yarn test",
-    "clean": "yarn clean:lib",
+    "ci": "npm run test",
+    "clean": "npm run clean:lib",
     "clean:lib": "rm -rf lib",
     "lint": "eslint src",
-    "prepublishOnly": "yarn clean && yarn ci && yarn build",
+    "prepublishOnly": "npm run clean && npm run ci && npm run build",
     "test": "mocha test/**/"
   },
   "files": [
